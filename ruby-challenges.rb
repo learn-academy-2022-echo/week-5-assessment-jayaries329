@@ -50,3 +50,18 @@ p bike1.get_info
 # Expected output example: my_bike.pedal_faster(18) => 28
 # Expected output example: my_bike.brake(5) => 23
 # Expected output example: my_bike.brake(25) => 0
+def pedal_faster mph_num
+    @current_speed += mph_num
+end
+
+def brake brake_amt
+    if @current_speed > 0
+        @current_speed -= brake_amt
+        if @current_speed <= 0
+            @current_speed = 0
+        end
+    else
+       p "You're already stopped!"
+    end
+end
+p bike1.pedal_faster(18)
